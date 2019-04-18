@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-class Histogram_Viewer_3D():
+class Hist3D():
     def __init__(self, matrix, axis):
         self.axis = axis
         axis.set_title('Scroll to view slices')
@@ -30,7 +30,7 @@ class Histogram_Viewer_3D():
 def main():
     figure, axis = plt.subplots(1,1)
     matrix = np.random.rand(20, 20, 40)
-    histogram_viewer = Histogram_Viewer_3D(matrix, axis)
+    histogram_viewer = Hist3D(matrix, axis)
     figure.canvas.mpl_connect('scroll_event', histogram_viewer.scroll)
     plt.show()
 
